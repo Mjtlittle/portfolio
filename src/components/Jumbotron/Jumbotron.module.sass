@@ -1,0 +1,40 @@
+@import '../../styles/variables'
+
+.container
+    position: relative
+    
+    width: 100%
+    height: 102vh
+
+.content
+    height: 100%
+
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+@keyframes icon-entrance
+    from
+        opacity: 0
+        transform: translate(0,-10em) scale(1.5)
+    to
+        opacity: 1
+
+.icon
+    position: absolute
+    width: 5em
+    z-index: -1
+
+    animation: icon-entrance 2s
+
+.orange
+    fill: $orange
+.yellow
+    fill: $yellow
+.green
+    fill: $green
+.blue
+    fill: $blue
+.gray
+    fill: $gray

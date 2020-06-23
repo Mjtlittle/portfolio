@@ -1,0 +1,26 @@
+@import '../styles/variables'
+    
+.title
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    color: $yellow
+    font-weight: 800
+
+    margin-bottom: 1em
+
+    font-size: 4em
+    @include responsive($med)
+        font-size: 5em
+    @include responsive($xl)
+        font-size: 9em
+    
+    span
+        margin-top: 0.5em
+        font-size: 0.3em
+        line-height: 1em
+
+a
+    font-size: 0.3
