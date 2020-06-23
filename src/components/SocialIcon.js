@@ -7,7 +7,7 @@ const SocialIcon = ({ icon, href }) => {
   const IconComp = icon
   return (
     <IconContext.Provider
-      value={{ color: 'black', size: '2em', className: styles.icon }}
+      value={{ color: 'black', size: '3em', className: styles.icon }}
     >
       <a href={href}>
         <IconComp />
