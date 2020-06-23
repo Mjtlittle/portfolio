@@ -21,7 +21,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: 'slug',
       value: `/${parent.sourceInstanceName}/${slug}`,
     })
-    //console.log(`/${parent.sourceInstanceName}/${slug}`)
   }
 }
 

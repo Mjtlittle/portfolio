@@ -51,7 +51,6 @@ const Projects = () => {
         <div className={styles.projects}>
           {data.projects.edges.map((edge) => {
             const info = edge.node.frontmatter
-            console.log(info.featuredImage)
             return (
               <ProjectCard
                 key={edge.node.id}

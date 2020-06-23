@@ -6,7 +6,6 @@ import styles from './ProjectCard.module.sass'
 import TagStrip from '../TagStrip'
 
 const ProjectCard = ({ fluid, title, description, tags, to }) => {
-  console.log(tags)
   return (
     <div className={styles.container}>
       <div className={styles.image_container}>
