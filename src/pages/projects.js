@@ -2,11 +2,7 @@ import React from 'react'
 
 import { graphql, useStaticQuery } from 'gatsby'
 
-import styles from './projects.module.sass'
-
 import Layout from '../components/Layout'
-import Content from '../components/Content'
-
 import ProjectCard from '../components/ProjectCard'
 
 const Projects = () => {
@@ -45,25 +41,8 @@ const Projects = () => {
   `)
 
   return (
-    <Layout title='Projects'>
-      <Content>
-        <h1>Projects</h1>
-        <div className={styles.projects}>
-          {data.projects.edges.map((edge) => {
-            const info = edge.node.frontmatter
-            return (
-              <ProjectCard
-                key={edge.node.id}
-                title={info.title}
-                description={info.description}
-                tags={info.tags}
-                fluid={info.thumbnail.childImageSharp.fluid}
-                to={edge.node.fields.slug}
-              />
-            )
-          })}
-        </div>
-      </Content>
+    <Layout>
+      <ProjectCard />
     </Layout>
   )
 }
