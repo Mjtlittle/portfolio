@@ -3,15 +3,16 @@ import React from 'react'
 import Head from './Head'
 import Topbar from './Topbar'
 
-import { CssBaseline, Container } from '@material-ui/core'
+import styles from './Layout.module.sass'
 
 const Layout = ({ title, children }) => {
   return (
     <React.Fragment>
-      <CssBaseline />
       <Head title={title} />
-      <Topbar />
-      <Container>{children}</Container>
+      <div className={styles.root}>
+        <Topbar />
+        {children}
+      </div>
     </React.Fragment>
   )
 }

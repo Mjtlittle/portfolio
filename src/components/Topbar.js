@@ -1,68 +1,40 @@
 import React from 'react'
 
-import {
-  AppBar,
-  Typography,
-  Toolbar,
-  Button,
-  IconButton,
-  useScrollTrigger,
-} from '@material-ui/core'
-import { makeStyles, createStyles } from '@material-ui/core/styles'
-import MoreIcon from '@material-ui/icons/MoreVert'
+import { Link } from 'gatsby'
+
+import { FiPackage } from 'react-icons/fi'
 
 import { useSiteMetadata } from '../hooks/useSiteMetadata'
 
-function ElevationScroll(props) {
-  const { children, window } = props
+import styles from './Topbar.module.sass'
 
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-    target: window ? window() : undefined,
-  })
+import SideNotch from './SideNotch'
 
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-  })
-}
-
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    title: {
-      flexGrow: 1,
-    },
-  })
+const TopbarLink = ({ label, to }) => (
+  <Link className={styles.link} to={to} activeClassName={styles.link_active}>
+    {label}
+  </Link>
 )
 
 const Topbar = () => {
   const { name } = useSiteMetadata()
-
-  const classes = useStyles()
+  const [firstname, lastname] = name.split(' ')
 
   return (
-    <React.Fragment>
-      <AppBar position='static'>
-        <Toolbar>
-          <Typography className={classes.title} variant='h6'>
-            {name}
-          </Typography>
-          <Button color='inherit'>Home</Button>
-          <Button color='inherit'>About</Button>
-          <Button color='inherit'>Contact</Button>
-          <Button color='inherit'>Projects</Button>
-          <Button color='inherit'>Blog</Button>
-          <IconButton
-            aria-label='display more actions'
-            edge='end'
-            color='inherit'
-          >
-            <MoreIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-      From Topbar
-    </React.Fragment>
+    <div className={styles.root}>
+      <SideNotch>
+        <FiPackage size='3em' />
+      </SideNotch>
+      <div className={styles.title}>
+        {firstname}
+        <b>{lastname}</b>
+      </div>
+      <div className={styles.links}>
+        <TopbarLink label='Home' to='/' />
+        <TopbarLink label='Projects' to='/projects' />
+        <TopbarLink label='About' to='/about' />
+      </div>
+    </div>
   )
 }
 
