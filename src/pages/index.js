@@ -2,23 +2,10 @@ import React from 'react'
 
 import { Link } from 'gatsby'
 
-import {
-  FaPython,
-  FaCss3Alt,
-  FaHtml5,
-  FaGitAlt,
-  FaNode,
-  FaReact,
-  FaJava,
-  FaJsSquare,
-  FaCuttlefish,
-  FaGithub,
-  FaTwitter,
-} from 'react-icons/fa'
-import { DiRust } from 'react-icons/di'
-import { MdEmail } from 'react-icons/md'
-
 import Layout from '../components/Layout'
+import Row from '../components/Row'
+import SideNotch from '../components/SideNotch'
+import PostPreview from '../components/PostPreview'
 
 import { useSiteMetadata } from '../hooks/useSiteMetadata'
 
@@ -27,8 +14,15 @@ const Home = () => {
 
   return (
     <Layout>
-      <h1>Heading 1</h1>
-      Hello wolrd
+      <PostPreview
+        to='https://www.google.com/'
+        title='This is an Example Post title'
+        description='this is an example post for my blog. Here will be a detailed description of the post and what it contains. Im not a hundred percent sure what will go here but i need to test really long text'
+      />
+      <PostPreview
+        title='This is an Example Post title 2'
+        description='this is an example post 2 for my blog. Here will be a detailed description of the post and what it contains. Im not a hundred percent sure what will go here but i need to test really long text'
+      />
     </Layout>
   )
 }

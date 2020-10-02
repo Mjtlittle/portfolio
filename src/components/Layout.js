@@ -11,7 +11,7 @@ const Layout = ({ title, children }) => {
       <Head title={title} />
       <div className={styles.root}>
         <Topbar />
-        {children}
+        <div className={styles.content}>{children}</div>
       </div>
     </React.Fragment>
   )
