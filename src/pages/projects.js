@@ -3,7 +3,6 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../components/Layout'
-import ProjectCard from '../components/ProjectCard'
 
 const Projects = () => {
   const data = useStaticQuery(graphql`
@@ -40,11 +39,7 @@ const Projects = () => {
     }
   `)
 
-  return (
-    <Layout>
-      <ProjectCard />
-    </Layout>
-  )
+  return <Layout></Layout>
 }
 
 export default Projects
