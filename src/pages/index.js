@@ -50,6 +50,11 @@ const Home = () => {
       </Jumbotron>
       <Content topCurve>
         <br />
+        <div style={{ color: 'red' }}>
+          This site was made in a couple days for a camp. I will eventually get
+          around to remake it completely.
+        </div>
+
         <h2 id='about'>About</h2>
 
         <p>
@@ -63,9 +68,6 @@ const Home = () => {
             alt='profile'
             src={aboutPicture}
           />
-          <a href='/cv.pdf' download>
-            Download CV
-          </a>
         </p>
         <hr />
         <h2>Familiar Technologies</h2>
@@ -95,8 +97,6 @@ const Home = () => {
           <SocialIcon icon={FaGithub} href='https://github.com/Mjtlittle' />
           <SocialIcon icon={FaTwitter} href='https://twitter.com/mjtlittle' />
         </div>
-        <h2>Send an Email</h2>
-        <EmailForm />
       </Content>
     </Layout>
   )
